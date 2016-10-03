@@ -1,0 +1,32 @@
+{
+    "author": "Jonathan Wukitsch",
+    "dependencies": {},
+    "keywords": [],
+    "name": "one",
+    "pebble": {
+        "capabilities": [
+            "configurable"
+        ],
+        "displayName": "One",
+        "enableMultiJS": true,
+        "messageKeys": {
+            "KEY_INVERT": 0
+        },
+        "projectType": "native",
+        "resources": {
+            "media": []
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk",
+            "diorite"
+        ],
+        "uuid": "6394d7c9-900d-42bd-87d8-79b3a66443c9",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.31.0"
+}
