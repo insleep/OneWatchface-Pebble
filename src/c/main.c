@@ -88,10 +88,10 @@ static void handle_datetime(struct tm* tick_time, TimeUnits units_changed) {
   handle_battery(battery_state_service_peek());
 }
 
-// Handle the start-up of the app
+// Handle the start-up of the watchface
 static void init(void) {
 
-  // Create our app's base window
+  // Create the watchface's base window
   window = window_create();
   window_stack_push(window, true);
   window_set_background_color(window, GColorBlack);
@@ -100,7 +100,7 @@ static void init(void) {
   GRect frame = layer_get_frame(root_layer);
 
   #if defined(PBL_ROUND)
-    // Init the text layer used to show the time
+    // Initialize the text layer used to show the time
     time_layer = text_layer_create(GRect(0, 50, frame.size.w /* width */, 50 /* height */));
     text_layer_set_text_color(time_layer, GColorWhite);
     text_layer_set_background_color(time_layer, GColorClear);
@@ -127,7 +127,7 @@ static void init(void) {
     text_layer_set_text_alignment(battery_layer, GTextAlignmentCenter);
     text_layer_set_text(battery_layer, "charging");
   #elif defined(PBL_RECT)
-    // Init the text layer used to show the time
+    // Initialize the text layer used to show the time
     time_layer = text_layer_create(GRect(0, 50, frame.size.w /* width */, 50 /* height */));
     text_layer_set_text_color(time_layer, GColorWhite);
     text_layer_set_background_color(time_layer, GColorClear);
@@ -207,7 +207,7 @@ static void deinit(void) {
   window_destroy(window);
 }
 
-// The main event/run loop for our app
+// The main event/run loop for the watchface
 int main(void) {
   init();
   app_event_loop();
